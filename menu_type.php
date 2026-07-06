@@ -62,8 +62,8 @@
             box-shadow: 0 6px 16px rgba(143, 11, 33, 0.4);
         }
 
-        .nav-btn::after {
-            content: "→";
+        .nav-btn::before {
+            content: "←";
             font-size: 15px;
         }
 
@@ -71,7 +71,7 @@
             border-collapse: separate;
             border-spacing: 0;
             width: 100%;
-            max-width: 900px;
+            max-width: 500px;
             margin: 0 auto;
             background: #ffffff;
             border-radius: 14px;
@@ -111,66 +111,41 @@
             background: #fdecec;
         }
 
-        td:nth-child(3) {
+        td:first-child {
             font-weight: 600;
             color: #c8102e;
-        }
-
-        td img {
-            border-radius: 10px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-            display: block;
-            margin: 0 auto;
+            width: 100px;
         }
     </style>
 </head>
 <body>
 
-    <h1 class="page-title">เมนูอาหาร</h1>
-    <p class="page-sub">รายการเมนูทั้งหมดจากระบบ</p>
+    <h1 class="page-title">ประเภทเมนู</h1>
+    <p class="page-sub">รายการประเภทเมนูทั้งหมดจากระบบ</p>
 
     <div class="nav-wrap">
-        <a href="menu_type.php" class="nav-btn">while Loop</a>
+        <a href="index.php" class="nav-btn">กลับหน้าเมนู</a>
     </div>
 
     <?php
-        //แสดง error
-
-    // Report all PHP errors
-    error_reporting(E_ALL);
-
-    // Force errors to be displayed on the screen
-    ini_set('display_errors', 1);
-    ini_set('display_startup_errors', 1);
-
         include "action/connect.php";
 
-        $sql = "SELECT * FROM menus";
+        $sql = "SELECT * FROM menu_types";
         $result = mysqli_query($con, $sql);
-    //   var_dump($result);
-
     ?>
 
     <table border=1>
         <thead>
-            <th>รหัสเมนู</th>
-            <th>ชื่อเมนู</th>
-            <th>ราคา</th>
-            <th>ภาพ</th>
-            <th>ประเภท</th>
+            <th>รหัสประเภท</th>
+            <th>ชื่อประเภท</th>
         </thead>
 
         <?php
-            foreach($result as $menu){
+            foreach($result as $type){
                 ?>
                 <tr>
-                    <td><?= $menu["menu_id"] ?></td>
-                    <td><?= $menu["menu_name"] ?></td>
-                    <td><?= $menu["menu_price"] ?></td>
-                    <td>
-                        <img src="<?= $menu["menu_image"] ?>" alt="" style="width:200px">
-                    </td>
-                    <td><?= $menu["type_id"] ?></td>
+                    <td><?= $type["type_id"] ?></td>
+                    <td><?= $type["type_name"] ?></td>
                 </tr>
                 <?php
             }
