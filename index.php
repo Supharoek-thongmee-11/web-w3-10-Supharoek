@@ -4,50 +4,97 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, sans-serif;
-            background: #f6f1e9;
+            font-family: 'Kanit', 'Segoe UI', Tahoma, sans-serif;
+            background: linear-gradient(180deg, #fff8ee 0%, #f6ecd9 100%);
             color: #3a2d21;
             margin: 0;
-            padding: 30px;
+            padding: 40px 20px 60px;
+        }
+
+        h1.page-title {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 700;
+            color: #a3181a;
+            margin: 0 0 6px;
+            letter-spacing: 0.5px;
+        }
+
+        p.page-sub {
+            text-align: center;
+            color: #8a7360;
+            font-size: 14px;
+            margin: 0 0 32px;
         }
 
         table {
-            border-collapse: collapse;
+            border-collapse: separate;
+            border-spacing: 0;
             width: 100%;
             max-width: 900px;
             margin: 0 auto;
             background: #ffffff;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(120, 70, 40, 0.12);
         }
 
         th, td {
-            border: 1px solid #e0d6c5;
-            padding: 10px 14px;
+            padding: 14px 16px;
             text-align: center;
+            border-bottom: 1px solid #f0e4d3;
         }
 
         thead th {
-            background: #b5231e;
+            background: linear-gradient(135deg, #c8102e, #8f0b21);
             color: #ffffff;
             font-weight: 600;
+            font-size: 14px;
+            letter-spacing: 0.3px;
+            padding: 16px;
+            border-bottom: none;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
         }
 
         tbody tr:nth-child(even) {
-            background: #faf6ee;
+            background: #fbf5ea;
+        }
+
+        tbody tr {
+            transition: background 0.15s ease;
         }
 
         tbody tr:hover {
-            background: #fdeaea;
+            background: #fdecec;
+        }
+
+        td:nth-child(3) {
+            font-weight: 600;
+            color: #c8102e;
         }
 
         td img {
-            border-radius: 6px;
+            border-radius: 10px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            display: block;
+            margin: 0 auto;
         }
     </style>
 </head>
 <body>
+
+    <h1 class="page-title">เมนูอาหาร</h1>
+    <p class="page-sub">รายการเมนูทั้งหมดจากระบบ</p>
 
     <?php
         //แสดง error
