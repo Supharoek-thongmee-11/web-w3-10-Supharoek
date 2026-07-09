@@ -130,7 +130,7 @@
     <p class="page-sub">รายการเมนูทั้งหมดจากระบบ</p>
 
     <div class="nav-wrap">
-        <a href="menu_type.php" class="nav-btn">while Loop</a>
+        <a href="menu_type.php" class="nav-btn">ประเภทเมนู</a>
     </div>
 
     <?php
